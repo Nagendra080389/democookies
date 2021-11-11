@@ -4,21 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 <script>
 
     window.onload = () => {
-        function setCookie(cname, cvalue, exdays, domain) {
-            const d = new Date();
-            d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-            let expires = "expires=" + d.toUTCString();
-            document.cookie =
-                cname + "=" + cvalue + ";" + expires + "domain=" + domain + ";path=/";
-        }
-
-        let url_string = window.location.href; //window.location.href
-        let url = new URL(url_string);
-
-        setCookie("key", "TestCookies", 1, url.host);
+        Cookies.set('asdasdasdasd', 'ergvsrt456t4')
 
         console.log("Page loaded");
     }
