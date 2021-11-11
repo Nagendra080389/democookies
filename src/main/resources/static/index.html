@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+    window.onload = () => {
+        function setCookie(cname, cvalue, exdays, domain) {
+            const d = new Date();
+            d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+            let expires = "expires=" + d.toUTCString();
+            document.cookie =
+                cname + "=" + cvalue + ";" + expires + "domain=" + domain + ";path=/";
+        }
+
+        let url_string = window.location.href; //window.location.href
+        let url = new URL(url_string);
+
+        setCookie("key", "TestCookies", 1, url.host);
+
+        console.log("Page loaded");
+    }
+
+</script>
+<body>
+<h1>BODY LOADED</h1>
+</body>
+</html>
